@@ -127,7 +127,7 @@ extension PhotoStreamViewController: UICollectionViewDelegateFlowLayout, UISearc
     if searchText != ""{
       print("after every text gets changed")
       timer.invalidate()
-      timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(output), userInfo: searchText, repeats: false)
+      timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(output), userInfo: searchText, repeats: false)
     }
     
 
