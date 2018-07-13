@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zyh-ad-FlB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Photo Stream View Controller-->
+        <scene sceneID="kqS-Pz-3ln">
+            <objects>
+                <collectionViewController id="Zyh-ad-FlB" customClass="PhotoStreamViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GoS-NR-1au">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <collectionViewLayout key="collectionViewLayout" id="I5x-k6-NRu" customClass="ImagesLayout" customModule="Pinterest" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AnnotatedPhotoCell" id="YvZ-ba-bjz" customClass="AnnotatedPhotoCell" customModule="Pinterest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dYa-Ve-ynZ" userLabel="Container View">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="160"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khC-vr-mlt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="127"/>
+                                                    <color key="backgroundColor" red="0.047143884003162384" green="0.36116248369216919" blue="0.16330596804618835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <gestureRecognizers/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdX-Ha-DAg">
+                                                    <rect key="frame" x="4" y="137" width="172" height="17"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPr-bd-p4b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="127"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.047143884003162384" green="0.36116248369216919" blue="0.16330596804618835" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="khC-vr-mlt" secondAttribute="trailing" id="8lu-7R-Ibn"/>
+                                                <constraint firstItem="xdX-Ha-DAg" firstAttribute="leading" secondItem="dYa-Ve-ynZ" secondAttribute="leading" constant="4" id="9oV-B0-Bvl"/>
+                                                <constraint firstItem="cPr-bd-p4b" firstAttribute="top" secondItem="khC-vr-mlt" secondAttribute="top" id="Bpp-Sb-U2t"/>
+                                                <constraint firstItem="cPr-bd-p4b" firstAttribute="bottom" secondItem="khC-vr-mlt" secondAttribute="bottom" id="Hsa-IH-78k"/>
+                                                <constraint firstItem="cPr-bd-p4b" firstAttribute="leading" secondItem="khC-vr-mlt" secondAttribute="leading" id="PYx-cy-5ed"/>
+                                                <constraint firstAttribute="bottom" secondItem="xdX-Ha-DAg" secondAttribute="bottom" constant="6" id="X5Z-Y3-bpY"/>
+                                                <constraint firstItem="cPr-bd-p4b" firstAttribute="trailing" secondItem="khC-vr-mlt" secondAttribute="trailing" id="c2j-QL-UbD"/>
+                                                <constraint firstItem="xdX-Ha-DAg" firstAttribute="top" secondItem="khC-vr-mlt" secondAttribute="bottom" constant="10" id="c9f-qj-9ms"/>
+                                                <constraint firstItem="khC-vr-mlt" firstAttribute="top" secondItem="dYa-Ve-ynZ" secondAttribute="top" id="gKe-cJ-Su9"/>
+                                                <constraint firstAttribute="trailing" secondItem="xdX-Ha-DAg" secondAttribute="trailing" constant="4" id="jNK-e1-kfh"/>
+                                                <constraint firstItem="khC-vr-mlt" firstAttribute="leading" secondItem="dYa-Ve-ynZ" secondAttribute="leading" id="xe6-ST-2or"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dYa-Ve-ynZ" secondAttribute="trailing" id="1nn-MU-nMY"/>
+                                    <constraint firstAttribute="bottom" secondItem="dYa-Ve-ynZ" secondAttribute="bottom" id="FMR-rR-uI2"/>
+                                    <constraint firstItem="dYa-Ve-ynZ" firstAttribute="leading" secondItem="YvZ-ba-bjz" secondAttribute="leading" id="kDy-Bg-pKg"/>
+                                    <constraint firstItem="dYa-Ve-ynZ" firstAttribute="top" secondItem="YvZ-ba-bjz" secondAttribute="top" id="n4H-Lx-fQG"/>
+                                </constraints>
+                                <size key="customSize" width="180" height="160"/>
+                                <connections>
+                                    <outlet property="captionLabel" destination="xdX-Ha-DAg" id="EEs-JD-mvv"/>
+                                    <outlet property="containerView" destination="dYa-Ve-ynZ" id="OXl-AY-7xT"/>
+                                    <outlet property="imageView" destination="khC-vr-mlt" id="AB3-3Q-dAV"/>
+                                    <outlet property="mp4View" destination="cPr-bd-p4b" id="jrw-ov-wP9"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Zyh-ad-FlB" id="3s0-W6-fmO"/>
+                            <outlet property="delegate" destination="Zyh-ad-FlB" id="K8V-Lj-5ur"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNh-dI-6Sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="511.19999999999999" y="380.95952023988008"/>
+        </scene>
+    </scenes>
+</document>
