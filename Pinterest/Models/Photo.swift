@@ -57,16 +57,30 @@ struct Photo {
   static func allPhotos(isSearch: Bool, string: String = "", rating: String = "") -> [Photo] {
     var photos = [Photo]()
     var urlString: String = ""
+    let uc = NSURLComponents()
+    uc.scheme = "http"
+    uc.host = "api.giphy.com"
+    
     if isSearch {
       urlString = "http://api.giphy.com/v1/gifs/search?api_key=7BJxl5yzWVq821HRxpyHBhPL5308ENrv&q=" + string + "&rating=" + rating
+      uc.path = "/v1/gifs/search"
+      uc.queryItems = [
+        URLQueryItem(name: "q", value: string),
+        URLQueryItem(name: "api_key", value: "7BJxl5yzWVq821HRxpyHBhPL5308ENrv"),
+        URLQueryItem(name: "rating", value: rating)
+      ]
     }else{
       urlString = "http://api.giphy.com/v1/gifs/trending?api_key=7BJxl5yzWVq821HRxpyHBhPL5308ENrv"
+      uc.path = "/v1/gifs/trending"
+      uc.queryItems = [
+        URLQueryItem(name: "api_key", value: "7BJxl5yzWVq821HRxpyHBhPL5308ENrv")
+      ]
     }
+  
     
-    guard let url = URL(string: urlString) else { return photos}
     let semaphore = DispatchSemaphore(value: 0)
     
-    URLSession.shared.dataTask(with: url) { (data, response, error) in
+    URLSession.shared.dataTask(with: uc.url!) { (data, response, error) in
       if error != nil {
         print(error!.localizedDescription)
       }
